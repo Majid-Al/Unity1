@@ -11,5 +11,9 @@ public class Switch : MonoBehaviour
         Debug.Log("changed");
     }
 
+    public void ChangeTheAttack()
+    {
+        GameManager.Instance.attackNearestEnemy = !GameManager.Instance.attackNearestEnemy;
+    }
 
 }

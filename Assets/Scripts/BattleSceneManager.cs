@@ -5,6 +5,4 @@ using UnityEngine;
 public class BattleSceneManager : MonoBehaviour
 {
     public bool canHeroWalk = true;
-
-
 }

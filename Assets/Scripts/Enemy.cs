@@ -5,8 +5,10 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject target;
-    int speed = 5;
-
+    [SerializeField] float speed = 1;
+    [SerializeField] float health;
+    [SerializeField] float attack;
+    [SerializeField] float attackRange;
 
     void Start()
     {
@@ -14,6 +16,8 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+    }
 
     }
-}
+
+
