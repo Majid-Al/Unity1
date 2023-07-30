@@ -7,7 +7,7 @@ public class Switch : MonoBehaviour
     [SerializeField] GameObject sceneManager;
     public void OnImageClicked()
     {
-        sceneManager.GetComponent<BattleSceneManager>().canHeroWalk = !sceneManager.GetComponent<BattleSceneManager>().canHeroWalk;
+        sceneManager.GetComponent<BattleSceneManager>().p_canHeroWalk = !sceneManager.GetComponent<BattleSceneManager>().p_canHeroWalk;
         Debug.Log("changed");
     }
 

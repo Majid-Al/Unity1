@@ -17,7 +17,6 @@ public class Attacking : MonoBehaviour
     [SerializeField] float fireRate = 2f;
     public bool p_beginShooting = false;
 
-    public float p_attackDamage = 40f;
     // Start is called before the first frame update
     void Start()
     {
@@ -118,7 +117,7 @@ public class Attacking : MonoBehaviour
             Rigidbody2D rigidbody2d = shot.GetComponent<Rigidbody2D>();
             rigidbody2d.velocity = 1 * transform.right;
             shot.GetComponent<HeroBullet>().SetTarget(firstOne);
-            Destroy(shot, 3f);
+            // Destroy(shot, 3f);
             yield return new WaitForSeconds(fireRate);
         }
     }

@@ -4,5 +4,14 @@ using UnityEngine;
 
 public class BattleSceneManager : MonoBehaviour
 {
-    public bool canHeroWalk = true;
+    public bool p_canHeroWalk = true;
+    public float p_attackDamage = 40;
+    public float p_cannonDamage = 5;
+
+
+
+    void plusAttack(float plus)
+    {
+        p_attackDamage += plus;
+    }
 }

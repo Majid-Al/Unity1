@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Base
+  - CBullet
+  - HBullet
   layers:
   - Default
   - TransparentFX

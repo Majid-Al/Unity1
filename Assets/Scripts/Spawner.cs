@@ -6,49 +6,90 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] GameObject enemyBasic;
     [SerializeField] GameObject enemyRange;
-    [SerializeField] GameObject enemyTank;
     [SerializeField] GameObject enemyFast;
+    [SerializeField] GameObject enemyTank;
     [SerializeField] GameObject enemySuper;
     [SerializeField] int enemyNumbers;
 
+    List<GameObject> basicEnemyPool = new List<GameObject>();
+    List<GameObject> rangeEnemyPool = new List<GameObject>();
+    List<GameObject> fastEnemyPool = new List<GameObject>();
+    List<GameObject> tankEnemyPool = new List<GameObject>();
+    [SerializeField] int poolSize = 10;
+
+
+
     void Start()
     {
-        spawn(enemyNumbers);
+        // Initialize the Enemys pool
+        CreatePool(enemyBasic, basicEnemyPool, 10);
+        CreatePool(enemyRange, rangeEnemyPool, 10);
+        CreatePool(enemyFast, fastEnemyPool, 10);
+        CreatePool(enemyTank, tankEnemyPool, 10);
+
+
+
+
+
+
+        // spawn(enemyNumbers);
     }
 
-
+    void CreatePool(GameObject enemy, List<GameObject> thePool, int enemyNumbers)
+    {
+        for (int i = 0; i < enemyNumbers; i++)
+        {
+            GameObject spawnedEnemy = Instantiate(enemy, Vector3.zero, Quaternion.identity);
+            spawnedEnemy.SetActive(false);
+            thePool.Add(spawnedEnemy);
+        }
+    }
 
     void spawn(int x)
     {
-        int firstNumber = Random.Range(1, x + 1);
-        // Debug.Log("Enemy 1 : " + firstNumber);
-        for (int i = 0; i < firstNumber; i++)
+        x -= 3;
+        int randomNumber = Random.Range(1, x + 1);
+
+        for (int i = 0; i < randomNumber; i++)
         {
             Instantiate(enemyBasic, new Vector3(Random.Range(-2.2f, 2.5f), 6, 0), Quaternion.identity);
         }
-        int temp = x - firstNumber;
-        int secondNumber = Random.Range(1, temp + 1);
-        if (temp > 0)
-        {
-            // Debug.Log("Enemy 2 : " + secondNumber);
-            for (int i = 0; i < secondNumber; i++)
+        Debug.Log("basic enemys : " + randomNumber);
+
+
+
+        x = x - (randomNumber - 1);
+        randomNumber = Random.Range(1, x + 1);
+        for (int i = 0; i < randomNumber; i++)
             {
                 Instantiate(enemyRange, new Vector3(Random.Range(-2.2f, 2.5f), 6, 0), Quaternion.identity);
             }
-        }
-        int temp2 = temp - secondNumber;
-        if (temp2 > 0)
+        Debug.Log("range enemys : " + randomNumber);
+
+
+
+        x = x - (randomNumber - 1);
+        randomNumber = Random.Range(1, x + 1);
+
+        for (int i = 0; i < randomNumber; i++)
         {
-            // Debug.Log("Enemy 3 : " + temp2);
-            for (int i = 0; i < temp2; i++)
-            {
-                Instantiate(enemyRange, new Vector3(Random.Range(-2.2f, 2.5f), 6, 0), Quaternion.identity);
-            }
+            Instantiate(enemyFast, new Vector3(Random.Range(-2.2f, 2.5f), 6, 0), Quaternion.identity);
         }
-        // Debug.Log("For totall of : " + firstNumber + secondNumber + temp2);
+        Debug.Log("Fast enemys : " + randomNumber);
+
+
+
+
+        x = x - (randomNumber - 1);
+
+        for (int i = 0; i < x; i++)
+        {
+            Instantiate(enemyTank, new Vector3(Random.Range(-2.2f, 2.5f), 6, 0), Quaternion.identity);
+        }
+        Debug.Log("Tank enemys : " + x);
+
+
     }
-
-
 
 
 }

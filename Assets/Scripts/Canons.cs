@@ -24,7 +24,7 @@ public class Canons : MonoBehaviour
     void Update()
     {
 
-        canHeroWalk = sceneManager.GetComponent<BattleSceneManager>().canHeroWalk;
+        canHeroWalk = sceneManager.GetComponent<BattleSceneManager>().p_canHeroWalk;
 
         if (canHeroWalk == false && Input.touchCount > 0)
         {
