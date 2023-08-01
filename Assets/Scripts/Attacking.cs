@@ -17,10 +17,13 @@ public class Attacking : MonoBehaviour
     [SerializeField] float fireRate = 2f;
     public bool p_beginShooting = false;
 
+    [SerializeField] GameObject battleSceneManager;
+    BattleSceneManager battleSceneManagerScript;
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("GetTarget", 0f, 0.5f);
+        battleSceneManagerScript = battleSceneManager.GetComponent<BattleSceneManager>();
     }
 
     // Update is called once per frame
@@ -56,8 +59,8 @@ public class Attacking : MonoBehaviour
                 INDEX++;
             }
         }
-        // find the first enemy in ther range
-        if (GameManager.Instance.attackNearestEnemy == false)
+        // find the first enemy in the range
+        if (battleSceneManagerScript.p_attackNearestEnemy == false)
         {
             if (nearEnemys.Length >= 1 && nearEnemys[0])
             {
@@ -77,7 +80,7 @@ public class Attacking : MonoBehaviour
                 setTarget = true;
             }
         }
-        if (GameManager.Instance.attackNearestEnemy == true)
+        if (battleSceneManagerScript.p_attackNearestEnemy == true)
         {
             if (nearEnemys.Length >= 1 && nearEnemys[0])
             {

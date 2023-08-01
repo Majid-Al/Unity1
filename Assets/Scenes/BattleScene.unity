@@ -165,7 +165,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &72654707
 GameObject:
@@ -318,6 +318,7 @@ MonoBehaviour:
   p_canHeroWalk: 1
   p_attackDamage: 40
   p_cannonDamage: 5
+  p_attackNearestEnemy: 0
 --- !u!4 &404581768
 Transform:
   m_ObjectHideFlags: 0
@@ -330,7 +331,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -718,7 +719,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1355525362
 MonoBehaviour:
@@ -734,10 +735,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyBasic: {fileID: 4140642841063985264, guid: 81396d3b7b2b93249b732e3467f74df2, type: 3}
   enemyRange: {fileID: 7306572648562882007, guid: 62d2fe4194b5289408ebc17d36ab1b72, type: 3}
-  enemyTank: {fileID: 6617129298433470029, guid: b0d1f2ca25a0fa3459b09d313049aad5, type: 3}
   enemyFast: {fileID: 5624510159435592714, guid: a10b97660a10c124984066526b20dc22, type: 3}
+  enemyTank: {fileID: 6617129298433470029, guid: b0d1f2ca25a0fa3459b09d313049aad5, type: 3}
   enemySuper: {fileID: 8255061801454987020, guid: 46b28df0ae580fe4bb5f5859efabe69c, type: 3}
-  enemyNumbers: 15
+  enemyNumbers: 8
 --- !u!1 &1371085849 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5646048016463512830, guid: 638b55de6333d0a41aa0cdf68bebb650, type: 3}
@@ -1136,6 +1137,10 @@ PrefabInstance:
       propertyPath: haram
       value: 
       objectReference: {fileID: 1270461200}
+    - target: {fileID: 2579055562557925828, guid: a7cd59e243e4b6a43bdac743900bd274, type: 3}
+      propertyPath: battleSceneManager
+      value: 
+      objectReference: {fileID: 404581766}
     - target: {fileID: 2579055562557925829, guid: a7cd59e243e4b6a43bdac743900bd274, type: 3}
       propertyPath: m_Mass
       value: 50

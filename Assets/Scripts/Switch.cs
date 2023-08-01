@@ -5,15 +5,20 @@ using UnityEngine;
 public class Switch : MonoBehaviour
 {
     [SerializeField] GameObject sceneManager;
+    BattleSceneManager battleSceneManagerScript;
+    void Start()
+    {
+        battleSceneManagerScript = sceneManager.GetComponent<BattleSceneManager>();
+    }
     public void OnImageClicked()
     {
-        sceneManager.GetComponent<BattleSceneManager>().p_canHeroWalk = !sceneManager.GetComponent<BattleSceneManager>().p_canHeroWalk;
+        battleSceneManagerScript.p_canHeroWalk = !battleSceneManagerScript.p_canHeroWalk;
         Debug.Log("changed");
     }
 
     public void ChangeTheAttack()
     {
-        GameManager.Instance.attackNearestEnemy = !GameManager.Instance.attackNearestEnemy;
+        battleSceneManagerScript.p_attackNearestEnemy = !battleSceneManagerScript.p_attackNearestEnemy;
     }
 
 }

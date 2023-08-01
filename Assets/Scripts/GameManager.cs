@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public bool attackNearestEnemy = false;
     void Start()
     {
 
