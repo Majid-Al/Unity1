@@ -46,7 +46,6 @@ public class Attacking : MonoBehaviour
         int INDEX = 0;
         // get all the enemys
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
-
         GameObject[] nearEnemys = new GameObject[enemys.Length];
         // filter the enemys and find those in range
         closestDistance = 999;
