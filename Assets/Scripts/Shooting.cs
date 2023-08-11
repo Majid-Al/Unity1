@@ -33,8 +33,11 @@ public class Shooting : MonoBehaviour
         if (shootCounter <= 0)
         {
             GameObject shot = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity);
-            Rigidbody2D rigidbody2d = shot.GetComponent<Rigidbody2D>();
-            rigidbody2d.velocity = bulletSpeed * transform.right;
+            Rigidbody2D shotRigidbody2d = shot.GetComponent<Rigidbody2D>();
+            shotRigidbody2d.velocity = bulletSpeed * transform.right;
+            Vector3 dir = transform.right - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            shot.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             shootCounter = 1;
             Destroy(shot, 3f);
         }

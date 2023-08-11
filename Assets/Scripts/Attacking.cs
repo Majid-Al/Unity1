@@ -116,8 +116,8 @@ public class Attacking : MonoBehaviour
         if (setTarget)
         {
             GameObject shot = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity);
-            Rigidbody2D rigidbody2d = shot.GetComponent<Rigidbody2D>();
-            rigidbody2d.velocity = 1 * transform.right;
+            Rigidbody2D bulletRigidbody2d = shot.GetComponent<Rigidbody2D>();
+            bulletRigidbody2d.velocity = 1 * transform.right;
             shot.GetComponent<HeroBullet>().SetTarget(firstOne);
             // Destroy(shot, 3f);
             yield return new WaitForSeconds(fireRate);

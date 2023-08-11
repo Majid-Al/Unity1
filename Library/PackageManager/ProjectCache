@@ -5,15 +5,15 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638266727997471038
-    m_Hash: 8202131
+      ticks: 638267669387369174
+    m_Hash: 3180973679
   m_LockFileStatus:
     m_FilePath: E:/Programings/Unity/Game dev/Thumb War - Tower Edition/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638266728021608402
+      ticks: 638267669657295403
     m_Hash: 3586436433
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
