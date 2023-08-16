@@ -6,6 +6,7 @@
 Library/
 Temp/
 *.log
+Logs
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
